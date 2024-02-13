@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.css';
+import './Button.scss';
 // import './button.css';
 
 interface ButtonProps {
