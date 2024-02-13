@@ -1,0 +1,58 @@
+/* Input.css */
+
+/* StyledInput */
+input {
+    height: 40px;
+    width: 300px;
+    border-radius: 3px;
+    border: solid 2px #353637;
+    background-color: #fff;
+}
+
+input:focus {
+    border: solid 2px #1b116e;
+}
+
+input[disabled] {
+    border-color: #e4e3ea;
+}
+
+input[data-error='true'] {
+    border-color: #a9150b;
+}
+
+input[data-success='true'] {
+    border-color: #067d68;
+}
+
+/* StyledLabel */
+.label {
+    font-size: 14px;
+    color: #080808;
+    padding-bottom: 6px;
+}
+
+.label p[data-disabled='true'] {
+    color: #e4e3ea;
+}
+
+/* StyledMessage */
+.message {
+    font-size: 14px;
+    /* color: #a9150b8; */
+    color: #a150b8;
+    padding-top: 4px;
+}
+
+/* StyledText */
+.text {
+    margin: 0;
+}
+
+.text[data-disabled='true'] {
+    color: #e4e3ea;
+}
+
+.text[data-error='true'] {
+    color: #a9150b;
+}
