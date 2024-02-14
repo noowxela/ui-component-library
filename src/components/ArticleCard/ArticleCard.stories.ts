@@ -25,33 +25,29 @@ type Story = StoryObj<typeof meta>;
 export const DqjCard: Story = {
     args: {
         matchType: true,
-        match_date: false,
+        type: "dqj",
         title: 'Mbemba faces online abuse following Congo-Morocco tie',
         description: `In a dominant French Cup performance, Paris Saint-Germain, led by Kylian Mbappé's hat trick, crushed sixth-tier Revel 9-0. The win propelled PSG into the round of 32, with Marco Asensio, Goncalo Ramos, Randal Kolo Muani, and Cher Ndour also contributing to the scoresheet. Despite Revel's initial enthusiasm, they were clearly outmatched, and their sporting director conceded the impending defeat. PSG now gears up for a Ligue 1 clash against Lens on January 14.`,
         league_name: 'National Basketball Association',
         teamAName: 'Boston Celtics',
-        teamALogoPath: 'Button',
         teamBName: 'Utah Jazz',
-        teamBLogoPath: 'Utah Jazz',
         authorName: '大球街',
-        authorAvatarPath: 'Button',
         date: 'Monday , 2024-01-22',
+        imgPath: 'https://cataas.com/cat',
     }
 };
 
 export const epCard: Story = {
     args: {
-        matchType: false,
-        match_date: false,
+        matchType: true,
+        type: "ep",
         title: 'Mbappe scores three goals as PSG easily defeats 6th-tier Revel in the Cup.',
         description: `In a dominant French Cup performance, Paris Saint-Germain, led by Kylian Mbappé's hat trick, crushed sixth-tier Revel 9-0. The win propelled PSG into the round of 32, with Marco Asensio, Goncalo Ramos, Randal Kolo Muani, and Cher Ndour also contributing to the scoresheet. Despite Revel's initial enthusiasm, they were clearly outmatched, and their sporting director conceded the impending defeat. PSG now gears up for a Ligue 1 clash against Lens on January 14.`,
         league_name: 'National Basketball Association',
         teamAName: 'Boston Celtics',
-        teamALogoPath: 'Button',
         teamBName: 'Utah Jazz',
-        teamBLogoPath: 'Utah Jazz',
-        authorName: '大球街',
-        authorAvatarPath: 'Button',
+        authorName: 'Julia',
         date: 'Monday , 2024-01-22',
+        imgPath: 'https://cataas.com/cat',
     }
 };

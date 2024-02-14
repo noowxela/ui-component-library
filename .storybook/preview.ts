@@ -8,7 +8,36 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i
             }
-        }
+        },
+        backgrounds: {
+            default: 'twitter',
+            values: [
+                {
+                    name: 'dqj_Dark',
+                    value: '#1c2838',
+                },
+                {
+                    name: 'dqj_Light',
+                    value: '#e9e9e9',
+                },
+                {
+                    name: 'ep_Dark',
+                    value: '#1e1e1e',
+                },
+                {
+                    name: 'ep_Light',
+                    value: '#eeeeee',
+                },
+                {
+                    name: 'twitter',
+                    value: '#00aced',
+                },
+                {
+                    name: 'facebook',
+                    value: '#3b5998',
+                },
+            ],
+        },
     }
 };
 

@@ -1,15 +1,11 @@
 import React from 'react';
-import './articleCard.css';
+import './articleCard.scss';
 
 interface ArticleCardProps {
     /**
      * Is this the principal call to action on the page?
      */
     matchType?: boolean;
-    /**
-     * Is this the principal call to action on the page?
-     */
-    match_date?: boolean;
     /**
      * What background color to use
      */
@@ -19,9 +15,9 @@ interface ArticleCardProps {
      */
     size?: 'small' | 'medium' | 'large';
     /**
-     * Button contents
+     * How large should the button be?
      */
-    label: string;
+    type?: 'ep' | 'dqj' ;
     /**
      * Button contents
      */
@@ -29,15 +25,7 @@ interface ArticleCardProps {
     /**
      * Button contents
      */
-    teamALogoPath: string;
-    /**
-     * Button contents
-     */
     teamBName: string;
-    /**
-     * Button contents
-     */
-    teamBLogoPath: string;
     /**
      * title contents
      */
@@ -76,45 +64,52 @@ interface ArticleCardProps {
  * Primary UI component for user interaction
  */
 const ArticleCard: React.FC<ArticleCardProps> = ({ 
-    matchType = true, match_date = false, size = 'medium', teamAName, teamALogoPath="", teamBName, teamBLogoPath="", backgroundColor, label, title, league_name, description, date, imgPath="", authorName="", authorAvatarPath="", ...props }) => {
+    matchType = true, size = 'medium', type, teamAName, teamBName, backgroundColor, title, league_name, description, date, imgPath="", authorName="", authorAvatarPath, ...props }) => {
     return (
-        <div className={"articles_content"}>
+        <div className={['articles_content', `articles_content--${type}`].join(' ')} style={{ backgroundColor }}>
             <div className={"image_small"}>
                 <img src={imgPath} />
             </div>
             <div className={"details"}>
+                <p className={"title"}>
+                    {title}
+                </p>
+                <p className={"league"}
+                    style={{
+                        fontSize: matchType? "":"0.8rem",
+                        overflow: matchType? "":"hidden",
+                        display: matchType? "":"-webkit-box",
+                        WebkitLineClamp: matchType? "":"3",
+                        // marginBottom: "16px",
+                    }}
+                >
+                    {
+                        matchType
+                            ?league_name
+                            :description
 
-            <p className={"league"}
-                style={{
-                    fontSize: matchType? "":"0.8rem",
-                    overflow: matchType? "":"hidden",
-                    display: matchType? "":"-webkit-box",
-                    WebkitLineClamp: matchType? "":"3",
-                    // marginBottom: "16px",
-                }}
-            >
+                    }
+                </p>
                 {
                     matchType
-                        ?league_name
-                        :description
-
+                    ?<div className={"teams"}>
+                        <span className={"team"}> {teamAName} </span>
+                        <span>{" "}VS{" "}</span>
+                        <span className={"team"}> {teamBName} </span>
+                    </div>
+                    :null
                 }
-            </p>
-            {matchType?
-                <div className={"teams"}>
-                    <span className={"team"}> {teamAName} </span>
-                    <span>{" "}VS{" "}</span>
-                    <span className={"team"}> {teamBName} </span>
+                <div className={"author"}>
+                    <p className={"details"}>
+                        {
+                            authorAvatarPath
+                            ?<img src={authorAvatarPath}/>
+                            :null
+                        }
+                        <span> { authorName } </span>
+                    </p>
+                    <p> { date }</p>
                 </div>
-                :null
-            }
-            <div className={"author"}>
-                <div className={"details"}>
-                    <img src={authorAvatarPath}/>
-                    <span>{ authorName } </span>
-                    <span> { date }</span>
-                </div>
-            </div>
             </div>
         </div>
     );

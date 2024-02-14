@@ -1,0 +1,61 @@
+$header-height: 60px;
+$hover-color: var(--sideNavHover-color , #fff);
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@mixin text-ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-ellipsis1() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-ellipsis1_a() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Define a keyframes animation for blinking
+@keyframes blink {
+  0% {
+    opacity: 1; // Fully visible
+  }
+  50% {
+    opacity: 0; // Completely invisible
+  }
+  100% {
+    opacity: 1; // Fully visible again
+  }
+}
+
+.no_result_box{
+    .content_block_title{
+        text-align: center;
+        color: var(--font2-color);
+    }
+}

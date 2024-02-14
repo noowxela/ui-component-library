@@ -14,8 +14,8 @@ const config: StorybookConfig = {
         options: {
             builder: {
                 useSWC: true
-            }
-        }
+            },
+        },
     },
     docs: {
         autodocs: 'tag'
