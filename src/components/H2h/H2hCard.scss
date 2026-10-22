@@ -1,0 +1,222 @@
+@import '../styles/sharedStyles.module.scss';
+
+$border_color : #FFEED080;
+$bg_color : #0d0d0d;
+$bg_draw_color : #2F2F2F;
+$date01_color : #F0D39A;
+$statistic_line : #F0D39A59;
+$date02_color : #828282;
+$win_color : #FFEED080;
+$text_color : white;
+
+.table {
+  width: 90%;
+  margin: auto;
+  font-size: 12px;
+  border: 0;
+  color: var(--font2-color,#fff);
+  font-weight: 250;
+  border-collapse: collapse;
+
+  tr:nth-child(even) {
+    border-bottom: 1px solid #F0D39A59;
+    padding: 20px 0;
+  }
+
+  td {
+    text-align: center;
+    padding: 2px;
+  }
+
+  .s_badge{
+    border-radius: 50%;
+    text-align: center;
+    height: 25px !important;
+    width: 25px !important;
+    vertical-align: middle;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .w {
+    background: linear-gradient(90deg, #FFFAF1 0%, #FFEED0 49.5%, #F0D39A 100%);
+    border: 1px solid $border_color;
+    color: black;
+  }
+
+  .d {
+    border: 1px solid $border_color;
+    background-color: $bg_draw_color;
+    color: white;
+  }
+
+  .l {
+    border: 1px solid $statistic_line;
+    color: var(--font2-color,"balck");
+  }
+
+  .date {
+    // width: 20%;
+    .first_line{
+      color: $date01_color;
+      font-weight: 700;
+    }
+    .section_line{
+      color: $date02_color;
+      font-weight: 400;
+    }
+  }
+  .team_section{
+    text-align: left;
+
+    &.win{
+      font-weight: 700;
+    }
+
+  }
+  .score {
+
+    &.win{
+      font-weight: 700;
+    }
+  }
+  .full_score{
+    font-weight: 700;
+  }
+}
+
+.img {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.header {
+  padding: 5px;
+  width: 100%;
+  background: radial-gradient(151.49% 295.21% at 50% -189.5%, #F0D39A 45.61%, #0D0D0D 73.5%, #0D0D0D 88.61%, #252525 100%);
+  border: 1px solid $border_color;
+  border-radius: 45px ;
+  background-color: $bg_color;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: white;
+  padding: 8px;
+  font-size: 1.2rem;
+  margin: 10px;
+  align-items: center;
+
+  img {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+  }
+
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  padding: 10px;
+
+  .img_container{
+    height: 50px;
+    width: 50px;
+    background-color: #303030;
+    border-radius: 50%;
+    img{
+      height: 45px;
+      width: auto;
+    }
+    margin-right: 35px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .left_section{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: center;
+  }
+
+  .team_name{
+    font-size: 14px;
+    // font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+
+  .Wl{
+    background-color: #292929;
+    border-radius: 40px;
+    display: inline-flex;
+    justify-content: space-between;
+    // font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+
+    p{
+      margin: 0;
+    }
+    div{
+      padding: 0.1rem 1rem;
+    }
+
+    .w{
+      color: #DAA451;
+    }
+    .wno{
+      color: white;
+    }
+    .l{
+      color: #7C7D82;
+    }
+    .lno{
+      color: #FFEED080;
+    }
+  }
+
+  .average{
+    background-color: #292929;
+    color: #FFFFFF;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    align-self: center;
+
+    p{
+      // font-size: 1rem;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .goal_rate{
+      font-style: italic;
+      font-weight: 300;
+      // line-height: 24px;
+      letter-spacing: 0em;
+      text-align: center;
+       
+    }
+  }
+}
+
+.grid_container > div {
+  border: 1.67px solid #FFEED080;
+  border-radius: 20px;
+  background: radial-gradient(151.49% 295.21% at 50% -189.5%, #F0D39A 45.61%, #0D0D0D 73.5%, #0D0D0D 88.61%, #252525 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
